@@ -1,0 +1,122 @@
+/* Reset CSS for cross-browser compatibility */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* background: linear-gradient(to right, #ff7e5f, #feb47b); Gradient background for the body */
+}
+
+/* Background styling */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/CC_logo.jpg') no-repeat center center/contain;
+    filter: blur(10px);
+    animation: scaleLogo 10s infinite alternate;
+    z-index: -1;
+}
+
+/* Keyframes for the logo animation */
+@keyframes scaleLogo {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Centered content styling */
+.content {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 40px 20px;
+    background: rgba(157, 157, 157, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(62, 62, 62, 0.5);
+    animation: fadeInContent 2s forwards;
+    opacity: 0;
+    max-width: 400px;
+    margin: 50px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect for the content */
+.content:hover {
+    transform: scale(1.05);
+}
+
+/* Keyframes for the content fade-in effect */
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive typography */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(to left,#000000, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Applying animation to the card */
+.content:hover {
+    animation: bounce 0.5s;
+}
